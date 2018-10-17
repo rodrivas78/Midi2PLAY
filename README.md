@@ -2,7 +2,7 @@
 Midi2PLAY is an application (for Windows 32/64) that helps the process of converting MIDI files (.mid) making them compatible with the syntax accepted by the "PLAY" command of MSX-BASIC.
 
 
- This program works as an extension of the "3ML Editor" program, that is, it depends on this one to carry out the conversion process. The 3ML Editor is free and can be downloaded at the link: http://aloe.or.tp/tools/3mle/ or here .... (At the moment this manual is written it is in the version: 2.0.3.783)
+ This program works as an extension of the "3ML Editor" program, that is, it depends on this one to carry out the conversion process. The 3ML Editor is free and can be downloaded at the link: http://3ml.jp/download.html
 
   Summary of conversion process:
 

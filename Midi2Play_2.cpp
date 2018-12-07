@@ -1,11 +1,11 @@
 //
-// Midi2PLAY  v.1.1    -    Por Rodrigo Rivas (Rodrivas78)  email: rrivas2009@gmail.com
-// Esta aplicaÁ„o converte sintaxe "mml" para a sintaxe aceita pelo
-// comando PLAY do MSX-BASIC. Trabalha com arquivos contendo um m·ximo de 3 canais simultaneos.
-// … necess·rio a utilizaÁ„o do programa "3ML Editor" para a convers„o do arquivo MIDI (.mid) para MML. 
-// TambÈm È necess·ria a formataÁ„o do arquivo de entrada ("mml.txt"). 
-// Fazendo-se imprescindÌvel a leitura das instruÁıes.
-// CompatÌvel com todas as versıes de MSX, n„o sendo necess·rio a utilizaÁ„o de  
+// Midi2PLAY  v.1.1    -    Por Rodrigo Gonzales (Rodrivas78)  email: rrivas2009@gmail.com
+// Esta aplica√ß√£o converte sintaxe "mml" para a sintaxe aceita pelo
+// comando PLAY do MSX-BASIC. Trabalha com arquivos contendo um m√°ximo de 3 canais simultaneos.
+// √â necess√°rio a utiliza√ß√£o do programa "3ML Editor" para a convers√£o do arquivo MIDI (.mid) para MML. 
+// Tamb√©m √© necess√°ria a formata√ß√£o do arquivo de entrada ("mml.txt"). 
+// Fazendo-se imprescind√≠vel a leitura das instru√ß√µes.
+// Compat√≠vel com todas as vers√µes de MSX, n√£o sendo necess√°rio a utiliza√ß√£o de  
 // hardwares musicais especializado como 
 // MSX-AUDIO, MSX-MUSIC, FM-PAC e etc.)
 // 
@@ -64,7 +64,7 @@ int main()
    char strNew= ' ';   
    char strNew2 = 'o'; //String 'O'
    string strNew3= "";
-   //Novas vari·veis 
+   //Novas vari√°veis 
    bool foundLetterO = false;
    int charCounter2=0;
    bool activNewCharCount = false;
@@ -124,13 +124,13 @@ int main()
 	string strTemp0; 
 	string strTemp2; 
 	string strTemp3; 
-	char charTemp2;	// Nova vari·vel: rotina de pagar as / 
+	char charTemp2;	// Nova vari√°vel: rotina de pagar as / 
     char strTemp;	//char strTemp;
 
 //----------------------Parser_support2----------------------------------------//
 //-----------------------------------------------------------------------------
 
-	//EliminaÁ„o das barras '/' token5 //tipo:char
+	//Elimina√ß√£o das barras '/' token5 //tipo:char
 	while(filein >> charTemp2)
 	{
 		if(charTemp2==token5)
@@ -154,10 +154,10 @@ fileout.close(); //Default
 			braCount++;
 		}
 		
-		//itera sobre os a matriz ignorando as indicaÁıes de compasso duplicadas
+		//itera sobre os a matriz ignorando as indica√ß√µes de compasso duplicadas
 		if(strTemp0 == strReplace[m] && braCount==1)
 		{
-            m++; //vai para a prÛxima posiÁ„o da matriz					
+            m++; //vai para a pr√≥xima posi√ß√£o da matriz					
 		}
 		
 		measures = m;
@@ -173,17 +173,17 @@ fileout.close(); //Default
     ifstream filein2("t1.txt"); //File to read from
 	ofstream fileout2("t2.txt"); //Temporary file	
 
-	//Elimina duplicaÁoes dos *M1* etc.    Tipo: string
+	//Elimina duplica√ßoes dos *M1* etc.    Tipo: string
  while(filein2 >> strTemp2)//it will check line from test to strTemp string
     {
 		
-		//Procura e apaga as marcaÁıes fazendo sobrar as marcaÁıes duplicadas. Os valores da matriz est„o no header
+		//Procura e apaga as marca√ß√µes fazendo sobrar as marca√ß√µes duplicadas. Os valores da matriz est√£o no header
 		if(strTemp2 == strReplace[m])//if your word found then replace
 		{
          
 			strTemp2 = strNew;		
-			m++; //vai para a prÛxima posiÁ„o da matriz
-			mControl++; //mControl È a quantidade de compassos por voz			
+			m++; //vai para a pr√≥xima posi√ß√£o da matriz
+			mControl++; //mControl √© a quantidade de compassos por voz			
 		
 			if(mControl==measures)
 			{
@@ -204,7 +204,7 @@ ofstream fileout4("t3.txt"); //Temporary file
 ifstream filein5("void.txt"); //File to read from
 ofstream fileout5("temp.txt"); //Temporary file
 
-//Procura (em "temp.txt") por coinscidÍncias, ao encontrar armazena as strings em outra matriz
+//Procura (em "temp.txt") por coinscid√™ncias, ao encontrar armazena as strings em outra matriz
 // ou as envia ao arquivo void
 // Detecta o caracater '*', se encontra 2 * para a contagem.
 
@@ -251,7 +251,7 @@ while(filein4 >> charTemp2)
 			fileout5 << charTemp2;			
 		}
 			
-		//Mostra no documento (temp) em que canal est· a duplicaÁ„o 
+		//Mostra no documento (temp) em que canal est√° a duplica√ß√£o 
 		if(charTemp2=='[')
 		{
 			braCount++;
@@ -318,15 +318,15 @@ fileout4.close();
 		//ativa a contagem de caracteres
 		if(activateCharCount = true)
 		{		
-		//conta os caracteres para encontrar a alteraÁ„o de oitava logo apÛs o /*M0*/ 
+		//conta os caracteres para encontrar a altera√ß√£o de oitava logo ap√≥s o /*M0*/ 
 		charCounter++;
 		}
 		if(activNewCharCount = true)
 		{		
-		//conta os caracteres para que n„o haja alteraÁ„o de oitava logo apÛs as barras na primeira vez (ver caso "canon") 
+		//conta os caracteres para que n√£o haja altera√ß√£o de oitava logo ap√≥s as barras na primeira vez (ver caso "canon") 
 		charNewCounter++;
 		}
-		// conta as 2 chaves ([ e ]) e incrementa braCount3 para controle da ˙ltima aspas do canal
+		// conta as 2 chaves ([ e ]) e incrementa braCount3 para controle da √∫ltima aspas do canal
 		if(strTemp==token4 || strTemp==token7)
 		{
 			braCount3++;			
@@ -352,19 +352,19 @@ fileout4.close();
 			 //apaga o '/' ao encontra-lo
  			 strTemp = strNew;
 
-			 //adiÁ„o de aspas mais mudanÁa de linha de acordo com o n˙mero de barras (slashs) encontradas		
+			 //adi√ß√£o de aspas mais mudan√ßa de linha de acordo com o n√∫mero de barras (slashs) encontradas		
 			  if(slashCount==1)
 			 {
 				 fileout6 << token6; //token6 = " " "  aspas
 			 }	
-			  //… possÌvel permitir ao usu·rio a escolha de agrupamento de compassos
+			  //√â poss√≠vel permitir ao usu√°rio a escolha de agrupamento de compassos
 			  //se pretende agrupar os compassos de 2 em 2 -> slashCount==5, se de 3 em 3 -> slashCount==7
 			  //Default: slashCount==3 (sem agrupamento).
 			  else if(slashCount == 2)
 			  {
 				  //fileout6 << '#';
 				  activNewCharCount = true;
-				  charNewCounter=0; //Devido ‡ essa vari·vel È que o # esta sendo impresso duas vezes
+				  charNewCounter=0; //Devido √† essa vari√°vel √© que o # esta sendo impresso duas vezes
 			  }
 			   else if(slashCount==slashVar) //else if(slashCount==7||braCount2%3)
 			 {
@@ -374,7 +374,7 @@ fileout4.close();
 				 fileout6 << token6;				 
 			 }						 			 		 
         } 
-		  //Insere ˙ltimas aspas de cada canal e zera o contador de barras
+		  //Insere √∫ltimas aspas de cada canal e zera o contador de barras
 		  if(braCount3==3)
 		  {
 			  slashCount=0;
@@ -386,7 +386,7 @@ fileout4.close();
 		 //rotina para eliminar > e inserir o O(n)  
 		 if(strTemp == token)//if your word > found then replace		
 		 {		
-			  //este condicional evita duplicaÁ„o na alteraÁ„o de oitavas
+			  //este condicional evita duplica√ß√£o na altera√ß√£o de oitavas
 			 if(charCounter==16)
 			 {					
 				strTemp = strNew;					
@@ -405,7 +405,7 @@ fileout4.close();
 		 if(strTemp == token2)//if your word is < found then replace					
 		 {		
 			
-			 //este condicional evita duplicaÁ„o na alteraÁ„o de oitavas
+			 //este condicional evita duplica√ß√£o na altera√ß√£o de oitavas
 			if(charCounter==16)
 			 {					
 				strTemp = strNew;					
@@ -432,7 +432,7 @@ fileout4.close();
 			 cout << token6 << channel << braCount << token6 << " begins: "  <<endl;
 			 cin >> oitava;
 			 fileout6 << "\n\n";
-			 charCounter = 0; // Zera a contagem para eliminaÁ„o de > ou < logo apÛs /*M0*/
+			 charCounter = 0; // Zera a contagem para elimina√ß√£o de > ou < logo ap√≥s /*M0*/
 			 activateCharCount = false; //desativa a contagem de caracateres
 			 activNewCharCount = false;
              lessOrGreaterThan = 0;
@@ -455,17 +455,17 @@ m=0;
 
     ifstream filein7("t4.txt"); //File to read from
     ofstream fileout7("t5.txt"); //Temporary file
-	//IteraÁ„o apÛs a retirada de /* e */
+	//Itera√ß√£o ap√≥s a retirada de /* e */
 
 	while(filein7 >> strTemp3)//it will check line from test to strTemp string
     {
-		//Modelo padr„o, n„o funciona com *M* duplicados
-		//Elimina as indicaÁıes de compasso. Os valores da matriz est„o no header
+		//Modelo padr√£o, n√£o funciona com *M* duplicados
+		//Elimina as indica√ß√µes de compasso. Os valores da matriz est√£o no header
 		if(strTemp3 == strReplace[m])//if your word found then replace
 		{
             strTemp3 = strNew3;		
 			m++; //quantidade de compassos/measures
-			mControl++; //mControl È a quantidade de compassos por voz
+			mControl++; //mControl √© a quantidade de compassos por voz
 			
 			if(mControl==measures2)
 		    {
@@ -493,7 +493,7 @@ m=0;
 			braCount++;			
 			matrixNum = 0;
 		}
-		// Apaga o ˙ltimo ']'
+		// Apaga o √∫ltimo ']'
 		if(charTemp2 == token7) //token 7 = ']'
 		{
 					
@@ -564,11 +564,11 @@ m=0;
 			}	
 			
 
-		if(charTemp2 == '"')//ao encontrar as aspas h· uma quebra de linha
+		if(charTemp2 == '"')//ao encontrar as aspas h√° uma quebra de linha
 		{
             tokenCounter++;							
 			
-			// Controla o momento em que h· troca das letras das matrizes
+			// Controla o momento em que h√° troca das letras das matrizes
 			if(tokenCounter==1)
 			{
 				matrixNum = 1;
@@ -599,7 +599,7 @@ m=0;
 			fileout8 << charTemp2;		 
     }
 
-	//Remove os arquivos tempor·rios
+	//Remove os arquivos tempor√°rios
 	filein8.close();
 
 	remove("t0.txt");

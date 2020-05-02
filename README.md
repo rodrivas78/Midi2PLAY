@@ -1,4 +1,8 @@
 # Midi2PLAY
+
+Update:
+On Windows 10 (64 bits) use version 1.2.0
+
 Midi2PLAY is an application (for Windows 32/64) that helps the process of converting MIDI files (.mid) making them compatible with the syntax accepted by the "PLAY" command of MSX-BASIC.
 
 For complete instructions see "Read_Me" file (https://github.com/rodrivas78/Midi2PLAY/blob/master/Midi2PLAY/ReadMe_en.txt)
